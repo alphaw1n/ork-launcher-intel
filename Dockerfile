@@ -15,6 +15,6 @@ RUN apt update && \
     libopengl0 \
     gdb \
     strace \
-    libdwarf1 
+    libdwarf1
                                                       
 WORKDIR /opt
