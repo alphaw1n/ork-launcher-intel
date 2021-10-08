@@ -33,5 +33,10 @@ jobs:
         UBUNTU_VERSION: "20.04"
       run: docker build . --file Dockerfile-$UBUNTU_VERSION --tag ${{secrets.DOCKER_USER}}/ork-launcher-intel:latest --tag ${{secrets.DOCKER_USER}}/ork-launcher-intel:$UBUNTU_VERSION
 
+    - name: Build the Docker image for Ubuntu 21.04
+      env: 
+        UBUNTU_VERSION: "21.04"
+      run: docker build . --file Dockerfile-$UBUNTU_VERSION --tag ${{secrets.DOCKER_USER}}/ork-launcher-intel:latest --tag ${{secrets.DOCKER_USER}}/ork-launcher-intel:$UBUNTU_VERSION
+
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USER}}/ork-launcher-intel --all-tags
