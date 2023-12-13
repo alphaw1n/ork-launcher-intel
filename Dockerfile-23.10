@@ -6,7 +6,6 @@ RUN apt update && \
     libsdl-mixer1.2 \
     libglfw3 \
     libgcrypt20 \
-    libgl1-mesa-glx \
     libgl1-mesa-dri \
     mesa-utils \
     alsa-utils \
@@ -16,6 +15,9 @@ RUN apt update && \
     libopengl0 \
     gdb \
     strace \
-    libdwarf1
-                                                      
+    libdwarf1 \
+    wget
+
+RUN wget -O package.deb https://launchpad.net/ubuntu/+archive/primary/+files/libgl1-mesa-glx_23.0.4-0ubuntu1%7E22.04.1_amd64.deb && dpkg -i package.deb
+
 WORKDIR /opt
